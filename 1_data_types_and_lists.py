@@ -62,9 +62,9 @@ list3.extend([6, 88]) # out: [8, 3, 19, 6, 88]
 len(list3)
 
 # CONVERTING LISTS TO SERIES AND DATAFRAME
-list4 = range(5, 10) # range(n,m) -- gives a list from
+list4 = range(100, 105) # range(n,m) -- gives a list from
                      # n to m-1
-list4 # out: [5, 6, 7, 8, 9]
+list4 # out: [100, 101, 102, 103, 104]
 list5 = range(5) # range(m) -- gives list from 0 to m-1
 list5 # out: [0, 1, 2, 3, 4]
 list6 = ['q', 'r', 's', 't', 'u']
@@ -73,4 +73,24 @@ list6 = ['q', 'r', 's', 't', 'u']
 s1 = Series(list4)
 s2 = Series(list6)
 
-## lists to DataFrame
+## create DataFrame from lists OR series
+list7 =  range(60, 65)
+zip(list4, list6)
+zip1= zip(list4, list6, list7)
+df1 = DataFrame(zip1)
+df1[0]
+
+df2 = DataFrame(zip1, columns = ['two', 'apple', ':)'])
+df2['two']
+
+df3 = DataFrame(zip1, columns = [2, '2', ':)'])
+df3[2] # reference column with key (int) 2
+df3['2'] # reference column with key '2'
+df3[3:4] # slice out row 3
+df3[['2',':)']][3:4] # get column '2' and ':)' then 
+                     # get row 3
+
+## make datafrme using dict notation
+df4 = DataFrame({ ':(' : list4, 9: list6})
+dict1 = { ':(' : list4, 9: list6}
+dict1 [':(']
