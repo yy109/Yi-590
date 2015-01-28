@@ -5,7 +5,7 @@ import numpy as np
 main_dir = "/Users/lexiyang/Desktop/Yi-590"
 txt_file = "/File1_small.txt"
 
-pd.read_table(main_dir + txt_file, sep = " ") 
+pd.read_table(main_dir + txt_file, sep = " ") #we can also use "/s" to replace " "
 df = pd.read_table(main_dir + txt_file, sep = " ") 
 
 df[60:100]
