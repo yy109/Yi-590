@@ -22,7 +22,9 @@ df1[rows]
 
 # Check for any duplicated values on the SUBSET of panid and date
 df1.duplicated(['panid','date'])
+df1[df1.duplicated(['panid','date'])]
 df1.duplicated(['panid', 'date'], take_last = True)
+df1[df1.duplicated(['panid', 'date'], take_last = True)]
 
 # Drop the rows where consump is missing for any duplicated values
 t_b = df1.duplicated(['panid', 'date'])
